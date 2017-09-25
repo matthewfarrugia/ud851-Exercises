@@ -16,10 +16,13 @@
 package com.example.android.datafrominternet;
 
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,9 +62,19 @@ public class MainActivity extends AppCompatActivity {
     // DONE (9) Within onCreateOptionsMenu, use getMenuInflater().inflate to inflate the menu
     // DONE (10) Return true to display your menu
 
-    // TODO (11) Override onOptionsItemSelected
-    // TODO (12) Within onOptionsItemSelected, get the ID of the item that was selected
-    // TODO (13) If the item's ID is R.id.action_search, show a Toast and return true to tell Android that you've handled this menu click
-    // TODO (14) Don't forgot to call .show() on your Toast
-    // TODO (15) If you do NOT handle the menu click, return super.onOptionsItemSelected to let Android handle the menu click
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId() == R.id.action_search){
+            Toast.makeText(this,R.string.search_toast,Toast.LENGTH_SHORT).show();
+            return true;
+        }else{
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // DONE (11) Override onOptionsItemSelected
+    // DONE (12) Within onOptionsItemSelected, get the ID of the item that was selected
+    // DONE (13) If the item's ID is R.id.action_search, show a Toast and return true to tell Android that you've handled this menu click
+    // DONE (14) Don't forgot to call .show() on your Toast
+    // DONE (15) If you do NOT handle the menu click, return super.onOptionsItemSelected to let Android handle the menu click
 }

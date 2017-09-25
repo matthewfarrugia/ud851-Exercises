@@ -17,4 +17,6 @@
     <string name="app_name">Github Query</string>
     <!--DONE (1) Add a string resource called search with the title "Search"-->
     <string name="search">Search</string>
+
+    <string name="search_toast">You Have Selected Search</string>
 </resources>
