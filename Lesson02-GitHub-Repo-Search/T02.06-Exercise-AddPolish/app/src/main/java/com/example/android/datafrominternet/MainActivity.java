@@ -25,6 +25,8 @@ import android.widget.TextView;
 
 import com.example.android.datafrominternet.utilities.NetworkUtils;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mSearchResultsTextView;
 
-    // TODO (12) Create a variable to store a reference to the error message TextView
+    private TextView mErrorDisplayTextView;
+
+    // DONE (12) Create a variable to store a reference to the error message TextView
 
     // TODO (24) Create a ProgressBar variable to store a reference to the ProgressBar
 
@@ -50,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         mUrlDisplayTextView = (TextView) findViewById(R.id.tv_url_display);
         mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
 
-        // TODO (13) Get a reference to the error TextView using findViewById
+        mErrorDisplayTextView = (TextView) findViewById(R.id.tv_error_message_display);
+
+        // DONE (13) Get a reference to the error TextView using findViewById
 
         // TODO (25) Get a reference to the ProgressBar using findViewById
     }
@@ -66,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
         URL githubSearchUrl = NetworkUtils.buildUrl(githubQuery);
         mUrlDisplayTextView.setText(githubSearchUrl.toString());
         new GithubQueryTask().execute(githubSearchUrl);
+    }
+
+    private void showJsonDataView(){
+
     }
 
     // TODO (14) Create a method called showJsonDataView to show the data and hide the error
