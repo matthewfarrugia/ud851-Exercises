@@ -35,18 +35,37 @@ import android.widget.TextView;
 // TODO (4) From GreenAdapter, extend RecyclerView.Adapter<NumberViewHolder>
 public class GreenAdapter {
 
-    // TODO (1) Add a private int variable called mNumberItems
+    // DONE (1) Add a private int variable called mNumberItems
 
-    // TODO (2) Create a constructor for GreenAdapter that accepts an int as a parameter for numberOfItems
-    // TODO (3) Store the numberOfItems parameter in mNumberItems
+    private int mNumberItems;
 
-    // TODO (5) Override the onCreateViewHolder method
-    // TODO (6) Create and return a new NumberViewHolder within this method
+    // DONE (2) Create a constructor for GreenAdapter that accepts an int as a parameter for numberOfItems
+    // DONE (3) Store the numberOfItems parameter in mNumberItems
 
-    // TODO (7) Override onBindViewHolder
+    public void GreenAdapter (int numberOfItems){
+        mNumberItems = numberOfItems;
+    }
+
+
+    // DONE (5) Override the onCreateViewHolder method
+    // DONE (6) Create and return a new NumberViewHolder within this method
+
+    @Override
+    private NumberViewHolder onCreateViewHolder(View itemView){
+        return new NumberViewHolder(itemView);
+    }
+
+    // DONE (7) Override onBindViewHolder
     // TODO (8) Within onBindViewHolder, call holder.bind and pass in the position
 
+    @Override
+    private void onBindViewHolder(NumberViewHolder viewHolder){
+        viewHolder.bind(mNumberItems);
+    }
+
     // TODO (9) Override getItemCount and return the number of items to display
+
+
 
     /**
      * Cache of the children views for a list item.
